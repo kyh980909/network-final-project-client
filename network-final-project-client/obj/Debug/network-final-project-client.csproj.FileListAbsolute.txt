@@ -1,0 +1,10 @@
+C:\Users\CS3-19\Documents\GitHub\network-final-project-client\network-final-project-client\bin\Debug\network-final-project-client.exe.config
+C:\Users\CS3-19\Documents\GitHub\network-final-project-client\network-final-project-client\bin\Debug\network-final-project-client.exe
+C:\Users\CS3-19\Documents\GitHub\network-final-project-client\network-final-project-client\bin\Debug\network-final-project-client.pdb
+C:\Users\CS3-19\Documents\GitHub\network-final-project-client\network-final-project-client\obj\Debug\network-final-project-client.csprojAssemblyReference.cache
+C:\Users\CS3-19\Documents\GitHub\network-final-project-client\network-final-project-client\obj\Debug\network_final_project_client.Form1.resources
+C:\Users\CS3-19\Documents\GitHub\network-final-project-client\network-final-project-client\obj\Debug\network_final_project_client.Properties.Resources.resources
+C:\Users\CS3-19\Documents\GitHub\network-final-project-client\network-final-project-client\obj\Debug\network-final-project-client.csproj.GenerateResource.cache
+C:\Users\CS3-19\Documents\GitHub\network-final-project-client\network-final-project-client\obj\Debug\network-final-project-client.csproj.CoreCompileInputs.cache
+C:\Users\CS3-19\Documents\GitHub\network-final-project-client\network-final-project-client\obj\Debug\network-final-project-client.exe
+C:\Users\CS3-19\Documents\GitHub\network-final-project-client\network-final-project-client\obj\Debug\network-final-project-client.pdb
