@@ -30,46 +30,55 @@
         {
             this.id = new System.Windows.Forms.TextBox();
             this.pw = new System.Windows.Forms.TextBox();
-            this.LoginBt = new System.Windows.Forms.Button();
+            this.loginBt = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.loginBt)).BeginInit();
             this.SuspendLayout();
             // 
             // id
             // 
-            this.id.Location = new System.Drawing.Point(98, 189);
+            this.id.Location = new System.Drawing.Point(110, 233);
+            this.id.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.id.MaxLength = 20;
             this.id.Name = "id";
-            this.id.Size = new System.Drawing.Size(104, 21);
+            this.id.Size = new System.Drawing.Size(118, 25);
             this.id.TabIndex = 0;
             // 
             // pw
             // 
-            this.pw.Location = new System.Drawing.Point(98, 214);
+            this.pw.Location = new System.Drawing.Point(110, 265);
+            this.pw.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pw.MaxLength = 20;
             this.pw.Name = "pw";
-            this.pw.Size = new System.Drawing.Size(104, 21);
+            this.pw.Size = new System.Drawing.Size(118, 25);
             this.pw.TabIndex = 1;
             // 
-            // LoginBt
+            // loginBt
             // 
-            this.LoginBt.Image = global::network_final_project_client.Properties.Resources.LoginButton;
-            this.LoginBt.Location = new System.Drawing.Point(206, 187);
-            this.LoginBt.Name = "LoginBt";
-            this.LoginBt.Size = new System.Drawing.Size(80, 46);
-            this.LoginBt.TabIndex = 2;
-            this.LoginBt.UseVisualStyleBackColor = true;
-            this.LoginBt.Click += new System.EventHandler(this.LoginBt_Click);
+            this.loginBt.BackgroundImage = global::network_final_project_client.Properties.Resources.LoginButton;
+            this.loginBt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.loginBt.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.loginBt.Location = new System.Drawing.Point(234, 233);
+            this.loginBt.Name = "loginBt";
+            this.loginBt.Size = new System.Drawing.Size(86, 57);
+            this.loginBt.TabIndex = 3;
+            this.loginBt.TabStop = false;
+            this.loginBt.Click += new System.EventHandler(this.LoginBt_Click);
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImage = global::network_final_project_client.Properties.Resources.LoginImage;
-            this.ClientSize = new System.Drawing.Size(301, 295);
-            this.Controls.Add(this.LoginBt);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(344, 369);
+            this.Controls.Add(this.loginBt);
             this.Controls.Add(this.pw);
             this.Controls.Add(this.id);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "LoginForm";
             this.Text = "LoginForm";
+            ((System.ComponentModel.ISupportInitialize)(this.loginBt)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -79,6 +88,6 @@
 
         private System.Windows.Forms.TextBox id;
         private System.Windows.Forms.TextBox pw;
-        private System.Windows.Forms.Button LoginBt;
+        private System.Windows.Forms.PictureBox loginBt;
     }
 }

@@ -1,5 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
-using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,24 +20,38 @@ namespace network_final_project_client
         public LoginForm()
         {
             InitializeComponent();
-            socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
         }
 
         private void LoginBt_Click(object sender, EventArgs e)
         {
+            socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             byte[] bytes = new byte[1024];
-            var user = new User { Id = id.Text, Pw =  pw.Text };
-            var userJson = JsonConvert.SerializeObject(user);
-            byte[] loginData = Encoding.UTF8.GetBytes(userJson);
+            var Login = new JObject();
+
+            Login.Add("req", "login");
+            Login.Add("id", id.Text);
+            Login.Add("pw", pw.Text);
+
+            byte[] loginData = Encoding.UTF8.GetBytes(Login.ToString());
 
             try
             {
-                socket.Connect(IPAddress.Parse("210.123.255.192"), 9000);
+                socket.Connect(IPAddress.Parse("192.168.1.186"), 9000);
                 socket.Send(loginData);
-                
-                string text = Encoding.UTF8.GetString(bytes, 0,socket.Receive(bytes));
-                MsgBoxHelper.Show(text, MessageBoxButtons.OK);
-            } catch (Exception ex)
+
+                string data = Encoding.UTF8.GetString(bytes, 0, socket.Receive(bytes));
+                var readJson =  JObject.Parse(data);
+
+                MsgBoxHelper.Show(readJson["res"].ToString(), MessageBoxButtons.OK);
+
+                if (readJson["res"].ToString() == "true")
+                {
+                    this.Visible = false;
+                    MainForm mainForm = new MainForm();
+                    mainForm.ShowDialog();
+                }
+            }
+            catch (Exception ex)
             {
                 MsgBoxHelper.Error("연결에 실패했습니다!\n오류 내용:{0}", MessageBoxButtons.OK, ex.Message);
                 Close();
@@ -61,5 +75,5 @@ namespace network_final_project_client
             //    Application.OpenForms["MainForm"].Close();      // 실패시 폼을 닫아준다.
             //}
         }
-}
+    }
 }
