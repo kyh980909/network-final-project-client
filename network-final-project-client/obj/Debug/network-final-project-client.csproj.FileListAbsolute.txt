@@ -8,3 +8,14 @@ C:\Users\CS3-19\Documents\GitHub\network-final-project-client\network-final-proj
 C:\Users\CS3-19\Documents\GitHub\network-final-project-client\network-final-project-client\obj\Debug\network-final-project-client.csproj.CoreCompileInputs.cache
 C:\Users\CS3-19\Documents\GitHub\network-final-project-client\network-final-project-client\obj\Debug\network-final-project-client.exe
 C:\Users\CS3-19\Documents\GitHub\network-final-project-client\network-final-project-client\obj\Debug\network-final-project-client.pdb
+C:\Users\CS3-19\Documents\GitHub\network-final-project-client\network-final-project-client\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\CS3-19\Documents\GitHub\network-final-project-client\network-final-project-client\bin\Debug\Google.Protobuf.dll
+C:\Users\CS3-19\Documents\GitHub\network-final-project-client\network-final-project-client\bin\Debug\MySql.Data.dll
+C:\Users\CS3-19\Documents\GitHub\network-final-project-client\network-final-project-client\bin\Debug\Newtonsoft.Json.dll
+C:\Users\CS3-19\Documents\GitHub\network-final-project-client\network-final-project-client\bin\Debug\Renci.SshNet.dll
+C:\Users\CS3-19\Documents\GitHub\network-final-project-client\network-final-project-client\bin\Debug\Google.Protobuf.xml
+C:\Users\CS3-19\Documents\GitHub\network-final-project-client\network-final-project-client\bin\Debug\MySql.Data.xml
+C:\Users\CS3-19\Documents\GitHub\network-final-project-client\network-final-project-client\bin\Debug\Newtonsoft.Json.xml
+C:\Users\CS3-19\Documents\GitHub\network-final-project-client\network-final-project-client\bin\Debug\Renci.SshNet.xml
+C:\Users\CS3-19\Documents\GitHub\network-final-project-client\network-final-project-client\obj\Debug\network_final_project_client.LoginForm.resources
+C:\Users\CS3-19\Documents\GitHub\network-final-project-client\network-final-project-client\obj\Debug\network-final-project-client.csproj.CopyComplete
