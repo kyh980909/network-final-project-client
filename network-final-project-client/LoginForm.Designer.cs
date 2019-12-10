@@ -31,6 +31,8 @@
             this.id = new System.Windows.Forms.TextBox();
             this.pw = new System.Windows.Forms.TextBox();
             this.loginBt = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.loginBt)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,6 +51,7 @@
             this.pw.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pw.MaxLength = 20;
             this.pw.Name = "pw";
+            this.pw.PasswordChar = '*';
             this.pw.Size = new System.Drawing.Size(118, 25);
             this.pw.TabIndex = 1;
             // 
@@ -64,6 +67,26 @@
             this.loginBt.TabStop = false;
             this.loginBt.Click += new System.EventHandler(this.LoginBt_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(51, 303);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(140, 15);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "회원이 아니신가요?";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label2.Location = new System.Drawing.Point(198, 303);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(67, 15);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "회원가입";
+            this.label2.Click += new System.EventHandler(this.RegisterBt_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -72,12 +95,14 @@
             this.BackgroundImage = global::network_final_project_client.Properties.Resources.LoginImage;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(344, 369);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.loginBt);
             this.Controls.Add(this.pw);
             this.Controls.Add(this.id);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "LoginForm";
-            this.Text = "LoginForm";
+            this.Text = "로그인";
             ((System.ComponentModel.ISupportInitialize)(this.loginBt)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -89,5 +114,7 @@
         private System.Windows.Forms.TextBox id;
         private System.Windows.Forms.TextBox pw;
         private System.Windows.Forms.PictureBox loginBt;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

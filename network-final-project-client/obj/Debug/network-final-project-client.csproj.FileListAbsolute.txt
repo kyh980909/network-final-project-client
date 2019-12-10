@@ -39,3 +39,4 @@ C:\Users\user\Documents\GitHub\network-final-project-client\network-final-projec
 C:\Users\user\Documents\GitHub\network-final-project-client\network-final-project-client\obj\Debug\network_final_project_client.Properties.Resources.resources
 C:\Users\user\Documents\GitHub\network-final-project-client\network-final-project-client\obj\Debug\network-final-project-client.csproj.GenerateResource.Cache
 C:\Users\user\Documents\GitHub\network-final-project-client\network-final-project-client\obj\Debug\network_final_project_client.MainForm.resources
+C:\Users\user\Documents\GitHub\network-final-project-client\network-final-project-client\obj\Debug\network_final_project_client.RegisterForm.resources

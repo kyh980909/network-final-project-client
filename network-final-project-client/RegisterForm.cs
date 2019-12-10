@@ -1,5 +1,4 @@
-﻿using MySql.Data.MySqlClient;
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,25 +13,32 @@ using System.Windows.Forms;
 
 namespace network_final_project_client
 {
-    public partial class LoginForm : Form
+    public partial class RegisterForm : Form
     {
         Socket socket;
-        public LoginForm()
+        public RegisterForm()
         {
             InitializeComponent();
         }
 
         private void LoginBt_Click(object sender, EventArgs e)
         {
-            loginBt.Enabled = false;
+            this.Visible = false;
+            LoginForm loginForm = new LoginForm();
+            loginForm.ShowDialog();
+        }
+
+        private void RegisterBt_Click(object sender, EventArgs e)
+        {
+            registerBt.Enabled = false;
             socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            var Login = new JObject();
+            var Register = new JObject();
 
-            Login.Add("req", "login");
-            Login.Add("id", id.Text);
-            Login.Add("pw", pw.Text);
+            Register.Add("req", "register");
+            Register.Add("id", id.Text);
+            Register.Add("pw", pw.Text);
 
-            byte[] loginData = Encoding.UTF8.GetBytes(Login.ToString());
+            byte[] registerData = Encoding.UTF8.GetBytes(Register.ToString());
 
             try
             {
@@ -54,27 +60,9 @@ namespace network_final_project_client
             obj.WorkingSocket = socket;
             socket.BeginReceive(obj.Buffer, 0, obj.BufferSize, 0, DataReceived, obj);
 
-            socket.Send(loginData);
+            socket.Send(registerData);
 
-          
-            //string connStr = string.Format(@"server=localhost;
-            //                                  user=root;
-            //                                  password=1234;
-            //                                  database=network");
-            //MySqlConnection conn = new MySqlConnection(connStr);
 
-            //try
-            //{
-            //    conn.Open();
-
-            //    MessageBox.Show("MySQL 연결 성공");
-            //}
-            //catch
-            //{
-            //    conn.Close();
-            //    MessageBox.Show("MySQL 연결 실패");
-            //    Application.OpenForms["MainForm"].Close();      // 실패시 폼을 닫아준다.
-            //}
         }
 
         void DataReceived(IAsyncResult ar)
@@ -94,22 +82,16 @@ namespace network_final_project_client
 
             if (readJson["res"].ToString() == "true")
             {
+                MsgBoxHelper.Show(readJson["res"].ToString(), MessageBoxButtons.OK);
                 this.Visible = false;
-                MainForm mainForm = new MainForm();
-                mainForm.ShowDialog();
+                LoginForm loginForm = new LoginForm();
+                loginForm.ShowDialog();
             }
             else
             {
                 MsgBoxHelper.Show(readJson["result"].ToString(), MessageBoxButtons.OK);
             }
-            loginBt.Enabled = true;
-        }
-
-        private void RegisterBt_Click(object sender, EventArgs e)
-        {
-            this.Visible = false;
-            RegisterForm registerForm = new RegisterForm();
-            registerForm.ShowDialog();
+            registerBt.Enabled = true;
         }
     }
 }

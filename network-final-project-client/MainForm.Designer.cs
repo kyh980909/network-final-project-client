@@ -47,6 +47,7 @@
             this.Controls.Add(this.onlineList);
             this.Name = "MainForm";
             this.Text = "MainForm";
+            this.Load += new System.EventHandler(this.OnFormLoaded);
             this.ResumeLayout(false);
 
         }

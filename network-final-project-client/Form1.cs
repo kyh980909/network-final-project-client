@@ -25,22 +25,6 @@ namespace network_final_project_client
             _textAppender = new AppendTextDelegate(AppendText);
         }
 
-        public class AsyncObject
-        {
-            public byte[] Buffer;
-            public Socket WorkingSocket;
-            public readonly int BufferSize;
-            public AsyncObject(int bufferSize)
-            {
-                BufferSize = bufferSize;
-                Buffer = new byte[BufferSize];
-            }
-
-            public void ClearBuffer()
-            {
-                Array.Clear(Buffer, 0, BufferSize);
-            }
-        }
         private void OnFormLoaded(object sender, EventArgs e)
         {
             thisAddress = IPAddress.Parse("210.123.255.192");
