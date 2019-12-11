@@ -82,8 +82,8 @@ namespace network_final_project_client
 
             if (readJson["res"].ToString() == "true")
             {
-                MsgBoxHelper.Show(readJson["res"].ToString(), MessageBoxButtons.OK);
-                this.Visible = false;
+                MsgBoxHelper.Show("회원가입이 되었습니다!", MessageBoxButtons.OK);
+                SetVisibility(this, false);
                 LoginForm loginForm = new LoginForm();
                 loginForm.ShowDialog();
             }
@@ -91,7 +91,45 @@ namespace network_final_project_client
             {
                 MsgBoxHelper.Show(readJson["result"].ToString(), MessageBoxButtons.OK);
             }
-            registerBt.Enabled = true;
+            SetEnabled(registerBt, true);
+        }
+
+        public void SetVisibility(Control target, bool visible)
+        {
+            if (target.InvokeRequired)
+            {
+                target.Invoke(new EventHandler(
+                    delegate
+                    {
+                        target.Visible = visible;
+                    }));
+            }
+            else
+            {
+                target.Visible = visible;
+            }
+        }
+
+        public void SetEnabled(Control target, bool enabled)
+        {
+            if (target.InvokeRequired)
+            {
+                target.Invoke(new EventHandler(
+                    delegate
+                    {
+                        target.Enabled = enabled;
+                    }));
+            }
+            else
+            {
+                target.Enabled = enabled;
+            }
+        }
+
+        private void RegisterForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            socket.Shutdown(SocketShutdown.Both);
+            socket.Close();
         }
     }
 }

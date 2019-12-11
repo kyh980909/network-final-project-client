@@ -55,26 +55,6 @@ namespace network_final_project_client
             socket.BeginReceive(obj.Buffer, 0, obj.BufferSize, 0, DataReceived, obj);
 
             socket.Send(loginData);
-
-          
-            //string connStr = string.Format(@"server=localhost;
-            //                                  user=root;
-            //                                  password=1234;
-            //                                  database=network");
-            //MySqlConnection conn = new MySqlConnection(connStr);
-
-            //try
-            //{
-            //    conn.Open();
-
-            //    MessageBox.Show("MySQL 연결 성공");
-            //}
-            //catch
-            //{
-            //    conn.Close();
-            //    MessageBox.Show("MySQL 연결 실패");
-            //    Application.OpenForms["MainForm"].Close();      // 실패시 폼을 닫아준다.
-            //}
         }
 
         void DataReceived(IAsyncResult ar)
@@ -94,15 +74,18 @@ namespace network_final_project_client
 
             if (readJson["res"].ToString() == "true")
             {
-                this.Visible = false;
+                SetVisibility(this, false);
                 MainForm mainForm = new MainForm();
+                mainForm.PassId = id.Text;
+                mainForm.PassSocket = socket;
                 mainForm.ShowDialog();
             }
             else
             {
                 MsgBoxHelper.Show(readJson["result"].ToString(), MessageBoxButtons.OK);
             }
-            loginBt.Enabled = true;
+
+            SetEnabled(loginBt, true);
         }
 
         private void RegisterBt_Click(object sender, EventArgs e)
@@ -110,6 +93,59 @@ namespace network_final_project_client
             this.Visible = false;
             RegisterForm registerForm = new RegisterForm();
             registerForm.ShowDialog();
+        }
+
+        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SetFormClose(this);
+        }
+
+        public void SetVisibility(Control target, bool visible)
+        {
+            if (target.InvokeRequired)
+            {
+                target.Invoke(new EventHandler(
+                    delegate
+                    {
+                        target.Visible = visible;
+                    }));
+            }
+            else
+            {
+                target.Visible = visible;
+            }
+        }
+
+        public void SetEnabled(Control target, bool enabled)
+        {
+            if (target.InvokeRequired)
+            {
+                target.Invoke(new EventHandler(
+                    delegate
+                    {
+                        target.Enabled = enabled;
+                    }));
+            }
+            else
+            {
+                target.Enabled = enabled;
+            }
+        }
+
+        public void SetFormClose(Form target)
+        {
+            if (target.InvokeRequired)
+            {
+                target.Invoke(new EventHandler(
+                    delegate
+                    {
+                        target.Close();
+                    }));
+            }
+            else
+            {
+                target.Close();
+            }
         }
     }
 }

@@ -113,6 +113,7 @@
             this.Controls.Add(this.id);
             this.Name = "RegisterForm";
             this.Text = "회원가입";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegisterForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.registerBt)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

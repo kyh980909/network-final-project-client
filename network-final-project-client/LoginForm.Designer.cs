@@ -103,6 +103,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "LoginForm";
             this.Text = "로그인";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.loginBt)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
