@@ -95,11 +95,6 @@ namespace network_final_project_client
             registerForm.ShowDialog();
         }
 
-        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            SetFormClose(this);
-        }
-
         public void SetVisibility(Control target, bool visible)
         {
             if (target.InvokeRequired)
@@ -146,6 +141,11 @@ namespace network_final_project_client
             {
                 target.Close();
             }
+        }
+
+        private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            SetFormClose(this);
         }
     }
 }

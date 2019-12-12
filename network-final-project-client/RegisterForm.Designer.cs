@@ -77,6 +77,7 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "회원가입";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Click += new System.EventHandler(this.RegisterBt_Click);
             // 
             // label2
             // 
@@ -113,7 +114,7 @@
             this.Controls.Add(this.id);
             this.Name = "RegisterForm";
             this.Text = "회원가입";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegisterForm_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RegisterForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.registerBt)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

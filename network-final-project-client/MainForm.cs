@@ -47,6 +47,7 @@ namespace network_final_project_client
                 if (received <= 0)
                 {
                     obj.WorkingSocket.Close();
+                    Application.Exit();
                     return;
                 }
 
@@ -75,9 +76,6 @@ namespace network_final_project_client
             logout.Add("id", PassId);
             byte[] logoutData = Encoding.UTF8.GetBytes(logout.ToString());
             PassSocket.Send(logoutData);
-            PassSocket.Disconnect(false);
-            PassSocket.Close();
-            Application.Exit();
         }
 
         public void SetListView(ListView target, string item)

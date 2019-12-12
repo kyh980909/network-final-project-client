@@ -126,7 +126,7 @@ namespace network_final_project_client
             }
         }
 
-        private void RegisterForm_FormClosing(object sender, FormClosingEventArgs e)
+        private void RegisterForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             socket.Shutdown(SocketShutdown.Both);
             socket.Close();
